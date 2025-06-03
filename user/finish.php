@@ -1,17 +1,17 @@
 <?php
 	require_once $_SERVER['DOCUMENT_ROOT']. '/dinosaur/config.php';
-	require_once CONTROLLER_DIR . '/top_controller.php';
+	require_once CONTROLLER_DIR . '/user_controller.php';
 
-	$ctrl = new TopController();
-	$ctrl->indexAction();
-
+	$ctrl = new UserController();
+	$ctrl->finishAction();
+	$view = $ctrl->view;
 ?>
 <!DOCTYPE html>
 <html lang="ja">
 	<head>
 		<meta charset="utf-8">
-		<title>恐竜検定</title>
-		<meta name="description" content="恐竜検定であなたの知識を腕試し！">
+		<title>恐竜検定｜ユーザー登録　完了</title>
+		<meta name="description" content="恐竜検定であなたの知識を腕試し！ユーザー登録すると記録が残せます。">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<link rel="icon" href="img/favicon.ico">
 		<!--<link rel="apple-touch-icon" href="img/apple-touch-icon.png">-->
@@ -23,10 +23,12 @@
 		<?php include ROOT . 'header.php'; ?>
 
 		<main>
-			<h1>恐竜検定</h1>
+			<h1>ユーザー　新規登録　完了</h1>
 
-			<div><a href="user/input.php">新規登録</a></div>
+			<div>登録が完了しました。</div>
+			<div>ログインしてください。</div>
 
+			<a href="<?php echo ROOT;?>login.php">ログイン</a>
 		</main>
 
 		<!-- フッター -->
