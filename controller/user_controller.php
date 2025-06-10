@@ -29,6 +29,9 @@ class UserController extends CommonController{
 			unset($_SESSION['err']); //セッションのデータを消す
 		}
 
+		//ワンタイムトークンを作成してビューへ
+		$this->view['data']['csrf_token'] = $this->make_onetimetoken();
+
 		return;
 	}
 
@@ -41,10 +44,18 @@ class UserController extends CommonController{
 		//セッションに入れる
 		$_SESSION['data'] = $post;
 
+		//ワンタイムトークンをチェック
+		if (!$this->check_onetimetoken($post['csrf_token'])) {//トークンが一致しない場合は不正
+			$_SESSION['err']['err_message'] = '不正なアクセスです';
+			$this->send_redirect('input.php');
+			//リダイレクトして処理を終了
+		}
+
 		//入力チェック
 		$err = $this->err_check($post);
 		if (!empty($err)) {//入力エラーがある場合
 			//エラー内容をセッションに入れて、入力画面へリダイレクト
+			$_SESSION['err']['err_message'] = '入力内容を修正してください';
 			$_SESSION['err'] = $err;
 			$this->send_redirect('input.php');
 			//リダイレクトして処理を終了

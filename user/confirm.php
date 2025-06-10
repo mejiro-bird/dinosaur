@@ -13,8 +13,8 @@
 		<title>恐竜検定｜ユーザー登録　確認</title>
 		<meta name="description" content="恐竜検定であなたの知識を腕試し！ユーザー登録すると記録が残せます。">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<link rel="icon" href="img/favicon.ico">
-		<!--<link rel="apple-touch-icon" href="img/apple-touch-icon.png">-->
+		<link rel="icon" href="<?php echo DIR_NAME;?>img/favicon.ico">
+		<link rel="apple-touch-icon" href="<?php echo DIR_NAME;?>img/apple-touch-icon.png">
 		<link rel="stylesheet" href="http://unpkg.com/ress/dist/ress.min.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
