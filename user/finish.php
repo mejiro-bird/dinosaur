@@ -28,7 +28,7 @@
 			<div>登録が完了しました。</div>
 			<div>ログインしてください。</div>
 
-			<a href="<?php echo ROOT;?>login.php">ログイン</a>
+			<a href="<?php echo DIR_NAME;?>login.php">ログイン</a>
 		</main>
 
 		<!-- フッター -->

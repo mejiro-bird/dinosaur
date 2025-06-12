@@ -7,7 +7,6 @@ require_once MODEL_DIR . 'user_model.php';
 
 class UserController extends CommonController{
 	private $_model;
-	public $view;
 
 	public function __construct(){
 		parent::__construct();

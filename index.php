@@ -25,7 +25,9 @@
 		<main>
 			<h1>恐竜検定</h1>
 
+			<?php if(empty($ctrl->view['login'])):/*未ログインの場合*/?>
 			<div><a href="user/input.php">新規登録</a></div>
+			<?php endif;?>
 
 		</main>
 

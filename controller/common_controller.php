@@ -3,9 +3,26 @@
 	共通処理
 */
 class CommonController {
+	public $view;
+
 	public function __construct(){
 		//セッション開始
 		session_start();
+
+		//ログイン情報を取得する
+		$this->getLoginInfo();
+	}
+
+
+	//******************
+	// ログイン情報を取得してビューへ
+	//******************
+	public function getLoginInfo () {
+		if (!empty($_SESSION['login'])) {//ログイン情報がある場合
+			$this->view['login'] = $_SESSION['login'];
+		}
+
+		return;
 	}
 
 
