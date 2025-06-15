@@ -22,7 +22,13 @@ class UserController extends CommonController{
 		if (!empty($_SESSION['data'])) {
 			$this->view['data'] = $_SESSION['data'];
 			unset($_SESSION['data']); //セッションのデータを消す
+		} else {
+			//入力データがない場合、ログイン中であれば編集なのでユーザー情報を入れる
+			if (!empty($_SESSION['login'])) {
+				$this->view['data']['name'] = $_SESSION['login']['name'];
+			}
 		}
+		//エラーがあれば取得してビューに入れる
 		if (!empty($_SESSION['err'])) {
 			$this->view['err'] = $_SESSION['err'];
 			unset($_SESSION['err']); //セッションのデータを消す
@@ -81,7 +87,13 @@ class UserController extends CommonController{
 			$err['name'] = '20文字以内で入力してください';
 		} else {
 			//同じニックネームの人がいないか確認
-			if ($this->_model->checkUserName($post['name'])){
+			if (!empty($_SESSION['login'])) {//ログイン中の場合
+				$user_id = $_SESSION['login']['user_id']; //自分のIDのニックネームは除外する
+			} else {
+				$user_id = NULL;
+			}
+			
+			if ($this->_model->checkUserName($post['name'], $user_id)){
 				$err['name'] = 'このニックネームは既に使用されています';
 			}
 		}
@@ -93,6 +105,10 @@ class UserController extends CommonController{
 			$err['password'] = '同じパスワードを入力してください';
 		} elseif (mb_strlen($post['password']) > 20) {//20文字以上の場合
 			$err['password'] = '20文字以内で入力してください';
+		} elseif (mb_strlen($post['password']) < 5) {//5文字未満の場合
+			$err['password'] = '5文字以上入力してください';
+		} else if (!preg_match('/\\A[!-~]+\\z/', $post['password'])) {//半角英数字と記号以外がある場合
+			$err['password'] = '半角英数字と記号を使用してください';
 		} else {
 			//何もしない
 		}
@@ -117,7 +133,15 @@ class UserController extends CommonController{
 		$data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
 		//DBに登録する
-		$this->_model->insertUserMst($data);
+		if (!empty($_SESSION['login'])) {//ログイン中は編集
+			$data['user_id'] = $_SESSION['login']['user_id'];
+			$this->_model->updateUserMst($data);
+			//編集が完了したら、セッションに保管しているニックネームも変更する
+			$_SESSION['login']['name'] = $data['name'];
+			$this->view['login']['name'] = $data['name']; //ビューにも反映する
+		} else {//新規登録
+			$this->_model->insertUserMst($data);
+		}
 
 		return;
 	}	

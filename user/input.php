@@ -24,7 +24,11 @@
 		<?php include ROOT . 'header.php'; ?>
 
 		<main>
+			<?php if(!empty($ctrl->view['login'])):/*ログイン中の場合*/?>
+			<h1>ユーザー　編集</h1>
+			<?php else:/*未ログインの場合*/?>
 			<h1>ユーザー　新規登録</h1>
+			<?php endif;?>
 
 			<form action="confirm.php" method="post">
 				<?php if(!empty($view['err']['err_message'])):?>

@@ -23,7 +23,11 @@
 		<?php include ROOT . 'header.php'; ?>
 
 		<main>
+			<?php if(!empty($ctrl->view['login'])):/*ログイン中の場合*/?>
+			<h1>ユーザー　編集　確認</h1>
+			<?php else:/*未ログインの場合*/?>
 			<h1>ユーザー　新規登録　確認</h1>
+			<?php endif;?>
 
 			<div>下記の内容でよろしいですか。</div>
 

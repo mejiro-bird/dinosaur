@@ -23,12 +23,22 @@
 		<?php include ROOT . 'header.php'; ?>
 
 		<main>
-			<h1>ユーザー　新規登録　完了</h1>
+			<?php if(!empty($ctrl->view['login'])):/*ログイン中の場合*/?>
+			<h1>ユーザー　編集　完了</h1>
+			<div>登録が完了しました。</div>
 
+			<a href="<?php echo DIR_NAME;?>index.php">TOPに戻る</a>
+
+			<?php else:/*未ログインの場合*/?>
+			<h1>ユーザー　新規登録　完了</h1>
 			<div>登録が完了しました。</div>
 			<div>ログインしてください。</div>
 
 			<a href="<?php echo DIR_NAME;?>login.php">ログイン</a>
+
+			<?php endif;?>
+
+
 		</main>
 
 		<!-- フッター -->
