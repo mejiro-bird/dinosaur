@@ -26,8 +26,15 @@
 			<h1>恐竜検定</h1>
 
 			<?php if(empty($ctrl->view['login'])):/*未ログインの場合*/?>
+			<div><a href="<?php echo DIR_NAME;?>login.php">ログイン</a></div>
 			<div><a href="user/input.php">新規登録</a></div>
 			<?php endif;?>
+
+			<?php foreach($ctrl::QUIZ_LEVEL_MST as $level => $level_info):/*検定レベル別に表示させる*/?>
+				<div><?php echo $level_info['level_name'];?></div>
+				<div>全<?php echo $level_info['num'];?>問</div>
+				<a href="quiz/question.php?level=<?php echo $level;?>">はじめる</a>
+			<?php endforeach;?>
 
 		</main>
 

@@ -45,6 +45,10 @@ class UserController extends CommonController{
 	//******************
 	public function confirmAction () {
 		//POSTデータをエスケープして取得する
+		if (empty($_POST)) {//POST値がない場合
+			$this->send_redirect('input.php');
+			//リダイレクトして処理を終了
+		}
 		$post = $this->htmlspecialchars_all($_POST);
 		//セッションに入れる
 		$_SESSION['data'] = $post;

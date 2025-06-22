@@ -1,5 +1,5 @@
 <header id="header">
-	<span>恐竜検定</span>
+	<span><a href="<?php echo DIR_NAME;?>index.php">恐竜検定</a></span>
 
 	<?php if(!empty($ctrl->view['login'])):/*ログイン中の場合*/?>
 	<span><a href="<?php echo DIR_NAME;?>user/input.php"><?php echo $ctrl->view['login']['name'];?></a></span>

@@ -5,6 +5,17 @@
 class CommonController {
 	public $view;
 
+	//---検定レベルの定義---
+	const QUIZ_LEVEL_BASIC = 1; //初級
+	const QUIZ_LEVEL_DOCTOR = 5; //博士級
+	const QUIZ_LEVEL_MST = array(
+		//level_name:レベル名称　num:出題問題数
+		1 => array('level_name' => '初級', 'num' => 10),
+		5 => array('level_name' => '博士級', 'num' => 10)
+	);
+
+
+
 	public function __construct(){
 		//セッション開始
 		session_start();
@@ -33,13 +44,15 @@ class CommonController {
 	// 出力　$post : エスケープ処理後の配列
 	//******************
 	public function htmlspecialchars_all ($post) {
-		if (!empty($post)) {
-			foreach ($post as $key => $value) {
-				$post[$key] = htmlspecialchars($value, ENT_QUOTES, 'UTF-8'); //エスケープして上書き
-			}
+		foreach ($post as $key => $value) {
+			$post[$key] = htmlspecialchars($value, ENT_QUOTES, 'UTF-8'); //エスケープして上書き
 		}
 
 		return ($post);
+	}
+	// 変数をエスケープ処理する
+	public function htmlspecialchars_one ($post) {
+		return htmlspecialchars($post, ENT_QUOTES, 'UTF-8');
 	}
 
 
