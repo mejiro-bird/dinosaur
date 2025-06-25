@@ -135,4 +135,101 @@ class QuizController extends CommonController{
 
 		return;
 	}
+
+	//******************
+	//検定の結果発表
+	//******************
+	public function resultAction () {
+		if (empty($_SESSION['quiz_info'])) {//問題データがない場合は不正
+			$this->send_redirect(DIR_NAME.'index.php'); //TOPページへ
+			//リダイレクトして処理を終了
+		}
+		//結果データを取得する
+		$quiz_info = $_SESSION['quiz_info'];
+		//セッションデータを削除する
+		unset($_SESSION['quiz_data']);
+		unset($_SESSION['quiz_info']);
+
+		//===ログイン中の場合は記録を保存＆取得する===
+		if (!empty($_SESSION['login'])) {//ログイン中の場合
+			//記録があるか調べる
+			$score = $this->_model->getUserQuizScoreById($_SESSION['login']['user_id'],$quiz_info['level']);
+			if (empty($score)) {//初めて検定した場合
+				//メダルの数を初期化する
+				$score['gold_medal_num'] = 0;
+				$score['silver_medal_num'] = 0;
+				$score['bronze_medal_num'] = 0;
+				//今回獲得したメダルの数を増やす
+				$this->_setMedalNum($score,$quiz_info);
+				//記録を登録する
+				$this->_model->insertUserQuizScore($_SESSION['login']['user_id'],$quiz_info,$score);
+			} else {//既に記録がある場合
+				//今回獲得したメダルの数を増やす
+				$this->_setMedalNum($score,$quiz_info);
+				//最高得点を超えている場合は上書きする
+				if ($score['max_score'] <= $quiz_info['score']) {//今回の得点が最高得点の場合
+					$score['max_score'] = $quiz_info['score']; //上書きする
+					$score['max_score_datetime'] = date('Y-m-d h:i:s'); //上書きする
+				}
+				//最新の得点を上書きする
+				$score['latest_score'] = $quiz_info['score']; //上書きする
+				$score['latest_score_datetime'] = date('Y-m-d h:i:s'); //上書きする
+				//記録を更新する
+				$this->_model->updateUserQuizScore($_SESSION['login']['user_id'],$quiz_info,$score);
+			}
+			//ビューへ
+			$this->view['score'] = $score; //記録データをビューへ
+		}
+
+		//ビューへ
+		$this->view['quiz_info'] = $quiz_info;
+
+		return;
+	}
+	//今回獲得したメダルの数を反映する
+	private function _setMedalNum (&$score,$quiz_info) {
+		if ($quiz_info['score'] >= 90) {//90点以上なら金メダル
+			$score['gold_medal_num']++; //一つ増やす
+		} else if ($quiz_info['score'] >= 70) {//70点以上なら銀メダル
+			$score['silver_medal_num']++; //一つ増やす
+		} else if ($quiz_info['score'] >= 50) {//50点以上なら銅メダル
+			$score['bronze_medal_num']++; //一つ増やす
+		} else {
+			//メダル獲得なしなのでなにもしない
+		}
+
+		return;
+	}
+
+
+	//******************
+	//検定の記録を見る
+	//******************
+	public function scoreAction () {
+		//ログイン中にのみ表示するコンテンツなので、ログインしていなければリダイレクト
+		if (empty($_SESSION['login'])) {
+			$this->send_redirect(DIR_NAME.'index.php'); //TOPページへ
+			//リダイレクトして処理を終了
+		}
+
+		//各レベルでの記録を取得する
+		foreach (self::QUIZ_LEVEL_MST as $key => $row) {
+			$score[$key] = $this->_model->getUserQuizScoreById($_SESSION['login']['user_id'],$key); //指定レベルの記録を取得する
+			if (empty($score[$key])) { //記録がなかった場合
+				//獲得メダルを0個にセットする
+				$score[$key]['gold_medal_num'] = 0;
+				$score[$key]['silver_medal_num'] = 0;
+				$score[$key]['bronze_medal_num'] = 0;
+				//得点をーーにセットする
+				$score[$key]['max_score'] = '--';
+				$score[$key]['latest_score'] = '--';
+			}
+		}
+
+		//ビューへ
+		$this->view['score'] = $score;
+
+		return;
+	}
+
 }

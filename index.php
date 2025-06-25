@@ -36,6 +36,10 @@
 				<a href="quiz/question.php?level=<?php echo $level;?>">はじめる</a>
 			<?php endforeach;?>
 
+			<?php if(!empty($ctrl->view['login'])):/*ログイン中の場合*/?>
+			<div><a href="quiz/score.php">記録をみる</a></div>
+			<?php endif;?>
+
 		</main>
 
 		<!-- フッター -->

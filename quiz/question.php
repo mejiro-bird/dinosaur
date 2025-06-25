@@ -42,6 +42,7 @@
 				<input type="hidden" name="csrf_token" value="<?php echo (!empty($view['data']['csrf_token'])) ? $view['data']['csrf_token'] : ''; ?>">
 			</form>
 
+			<div>参考文献：講談社の動く図鑑move 恐竜新訂二版</div>
 
 		</main>
 
