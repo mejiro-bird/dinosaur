@@ -26,10 +26,15 @@ class DB {
 	//入力　$e : PDOExceptionのエラー
 	//******************
 	public function errAction($e) {
-		//TODO::エラー内容をファイルに書き出すようにする！！
-		//TODO::処理終了しエラーページを表示するようにする
-		echo $e->getMessage();
-		return;
+		$date = date('Y-m-d H:i:s');
+		$msg = $e->getMessage();
+		$trace = $e->getTraceAsString();
+		//エラー内容をファイルに書き出す
+		file_put_contents(ROOT.'err_log.txt', PHP_EOL.PHP_EOL.$date.PHP_EOL.$msg.PHP_EOL.$trace, FILE_APPEND);
+
+		//エラーページに遷移して処理終了
+		header('Location: '.DIR_NAME.'err.php');
+		exit;
 	}
 
 	public function __destruct(){
