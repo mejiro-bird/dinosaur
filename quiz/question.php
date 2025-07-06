@@ -17,7 +17,8 @@
 		<link rel="icon" href="<?php echo DIR_NAME;?>img/favicon.ico">
 		<link rel="apple-touch-icon" href="<?php echo DIR_NAME;?>img/apple-touch-icon.png">
 		<link rel="stylesheet" href="http://unpkg.com/ress/dist/ress.min.css">
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="<?php echo DIR_NAME;?>css/common.css">
+		<link rel="stylesheet" href="<?php echo DIR_NAME;?>css/quiz.css">
 	</head>
 	<body>
 		<!-- ヘッダー -->

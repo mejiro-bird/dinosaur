@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+.mainvisual {
+	text-align: center;
+	font-size: 28px;
+	font-weight: 700;
+	margin-bottom: 20px;
+}
+
+main .btn {
+	border: solid 1px #663300;
+	border-radius: 5px;
+	display: inline-block;
+	padding: 8px 80px;
+}
+
+main .login {
+	max-width: 230px;
+	margin: 10px auto 20px;
+	text-align: center;
+}
+main .login p {
+	margin-bottom: 10px;
+}
+main .login .link {
+	margin-top: 5px;
+	text-align: right;
+	font-size: 12px;
+}
+
+.quiz .item {
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 40px;
+}
+.quiz .item li {
+	background-color: #FFB6C1;
+	border: solid 3px #FFF;
+	border-radius: 10px;
+	width: 30%;
+	max-width: 300px;
+}
+.quiz .item li .title {
+	text-align: center;
+	margin: 5px 0;
+	font-size: 24px;
+}
+.quiz .item li .item2 {
+	display: flex;
+	justify-content: center;
+	height: 150px;
+	align-items: center;
+}
+.quiz .item li .item2 img {
+	width: 30%;
+}
+.quiz .item li .item2 .text {
+	text-align: center;
+	width: 45%;
+	font-size: 20px;
+}
+.quiz .item li .item2 .text p {
+	margin-bottom: 20px;
+}
+.quiz .item li .item2 .text a {
+	background-color: #FFF;
+	border: solid 1px #663300;
+	border-radius: 5px;
+	display: inline-block;
+	width: 90%;
+	padding: 8px 0;
+}
+
+
+.score {
+	text-align: center;
+}
+
+/*---------------------------------------
+スマートフォン
+----------------------------------------*/
+@media screen and (max-width: 767px) {
+
+
+}
