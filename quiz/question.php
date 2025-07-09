@@ -25,25 +25,30 @@
 		<?php include ROOT . 'header.php'; ?>
 
 		<main>
-			<h1><?php echo $view['level_name'] .'第'. $view['quiz_info']['question_num'] .'問';?></h1>
+			<div class="wrapper">
+				<h1 class="text_title"><?php echo $view['level_name'] .'　第'. $view['quiz_info']['question_num'] .'問';?></h1>
 
-			<div>Q</div>
-			<div><?php echo $view['quiz_data']['question'];?></div>
+				<div class="item">
+					<img src="<?php echo DIR_NAME;?>img/supino.png" alt="">
+					<div class="text_q"><?php echo $view['quiz_data']['question'];?></div>
+				</div>
 
-			<form action="answer.php" method="post">
-				<?php if($view['quiz_data']['question_type'] == 2):/* 問題種別が任意の選択肢の場合 */?>
-				<?php foreach($view['quiz_data']['option_data'] as $row):/*選択肢を表示する*/?>
-				<button type="submit" name="answer" value="<?php echo $row['option_num'];?>"><?php echo $row['option_text'];?></button>
-				<?php endforeach;?>
-				<?php else:/*問題種別がYES・NOの場合*/?>
-				<button type="submit" name="answer" value="1">YES</button>
-				<button type="submit" name="answer" value="2">NO</button>
-				<?php endif;?>
 
-				<input type="hidden" name="csrf_token" value="<?php echo (!empty($view['data']['csrf_token'])) ? $view['data']['csrf_token'] : ''; ?>">
-			</form>
+				<form class="select" action="answer.php" method="post">
+					<?php if($view['quiz_data']['question_type'] == 2):/* 問題種別が任意の選択肢の場合 */?>
+					<?php foreach($view['quiz_data']['option_data'] as $row):/*選択肢を表示する*/?>
+					<button class="btn" type="submit" name="answer" value="<?php echo $row['option_num'];?>"><?php echo $row['option_text'];?></button>
+					<?php endforeach;?>
+					<?php else:/*問題種別がYES・NOの場合*/?>
+					<button class="btn" type="submit" name="answer" value="1">YES</button>
+					<button class="btn" type="submit" name="answer" value="2">NO</button>
+					<?php endif;?>
 
-			<div>参考文献：講談社の動く図鑑move 恐竜新訂二版</div>
+					<input type="hidden" name="csrf_token" value="<?php echo (!empty($view['data']['csrf_token'])) ? $view['data']['csrf_token'] : ''; ?>">
+				</form>
+
+				<div class="text">参考文献：講談社の動く図鑑move 恐竜新訂二版</div>
+			</div>
 
 		</main>
 

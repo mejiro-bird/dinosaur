@@ -37,6 +37,12 @@ a:hover {
 	text-decoration: underline;
 }
 
+main .btn {
+	border: solid 1px #663300;
+	border-radius: 5px;
+	display: inline-block;
+	padding: 8px 80px;
+}
 
 #header {
 	width: 100%;
@@ -80,6 +86,12 @@ a:hover {
 
 main {
 	max-width: 1040px;
+	margin: 0 auto;
+}
+
+.wrapper {
+	max-width: 980px;
+	padding: 0 50px;
 	margin: 0 auto;
 }
 

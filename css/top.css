@@ -7,13 +7,6 @@
 	margin-bottom: 20px;
 }
 
-main .btn {
-	border: solid 1px #663300;
-	border-radius: 5px;
-	display: inline-block;
-	padding: 8px 80px;
-}
-
 main .login {
 	max-width: 230px;
 	margin: 10px auto 20px;
