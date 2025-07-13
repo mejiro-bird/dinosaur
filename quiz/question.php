@@ -24,12 +24,12 @@
 		<!-- ヘッダー -->
 		<?php include ROOT . 'header.php'; ?>
 
-		<main>
+		<main class="question">
 			<div class="wrapper">
 				<h1 class="text_title"><?php echo $view['level_name'] .'　第'. $view['quiz_info']['question_num'] .'問';?></h1>
 
 				<div class="item">
-					<img src="<?php echo DIR_NAME;?>img/supino.png" alt="">
+					<img class="img" src="<?php echo DIR_NAME;?>img/supino.png" alt="">
 					<div class="text_q"><?php echo $view['quiz_data']['question'];?></div>
 				</div>
 

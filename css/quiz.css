@@ -1,8 +1,11 @@
 @charset "UTF-8";
 
+.question {
+	text-align: center;
+}
+
 .text_title {
 	font-size: 24px;
-	text-align: center;
 	margin-bottom: 5px;
 	letter-spacing: 5px;
 }
@@ -12,10 +15,16 @@
 	justify-content: center;
 	align-items: center;
 }
-.item img {
+.item .img {
 	width: 30%;
 }
-.item .text_q {
+.item .correct img {
+	width: 40%;
+	display: block;
+	margin: auto;
+}
+.item .text_q,
+.item .correct {
 	width: 60%;
 	margin-left: 30px;
 	border: solid 1px #663300;
@@ -25,7 +34,8 @@
 	line-height: 2;
 	position: relative;
 }
-.item .text_q::after {/*吹き出しを作る*/
+.item .text_q::after,
+.item .correct::after {/*吹き出しを作る*/
 	content: "";
 	width: 18px;
 	height: 18px;
@@ -38,26 +48,31 @@
 	left: -10px;
 }
 
-.select {
-	text-align: center;
-}
-main .btn {
+.select .btn {
 	width: 30%;
 	height: 50px;
 	margin: 10px;
 	padding: 5px 10px;
 	color: #663300;
 }
-main .btn:hover{
+.select .btn:hover{
 	opacity: 0.7;
 }
 
-main .text {
+.question .text {
 	margin-top: 20px;
 	padding-right: 10px;
 	font-size: 12px;
 	text-align: right;
 }
+
+.answer {
+	text-align: center;
+}
+.answer .text {
+	margin: 20px auto;
+}
+
 
 /*---------------------------------------
 スマートフォン
