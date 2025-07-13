@@ -52,6 +52,10 @@ class QuizController extends CommonController{
 			$quiz_info = $_SESSION['quiz_info'];
 			//問題番号を進める
 			$quiz_info['question_num']++;
+			if ($quiz_info['question_num'] > $this::QUIZ_LEVEL_MST[$quiz_info['level']]['num'] ) {//不正な問題番号の場合
+				$this->send_redirect(DIR_NAME.'index.php');
+				//リダイレクトして処理を終了
+			}
 			//セッションを上書きする
 			$_SESSION['quiz_info']['question_num'] = $quiz_info['question_num'];
 		}
