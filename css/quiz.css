@@ -1,6 +1,9 @@
 @charset "UTF-8";
 
-.question {
+.question,
+.answer,
+.result,
+.score {
 	text-align: center;
 }
 
@@ -66,11 +69,81 @@
 	text-align: right;
 }
 
-.answer {
-	text-align: center;
-}
 .answer .text {
 	margin: 20px auto;
+}
+
+.result .wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 300px;
+}
+.result .text_score {
+	font-size: 40px;
+	font-weight: 700;
+	letter-spacing: 5px;
+	padding-right: 20px;
+}
+.result .img_medal {
+	padding-left: 20px;
+}
+
+.result .item_medal {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 150px;
+}
+.result .item_medal img {
+	width: 30%;
+	vertical-align: middle;
+}
+.result .item_medal .text {
+	line-height: 150px;
+}
+
+.result .description {
+	width: 15%;
+	margin: 8px auto;
+	text-align: left;
+	font-size: 12px;
+}
+
+.result .text {
+	margin: 20px 0;
+}
+
+
+.score .wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+.score h1 {
+	margin-bottom: 20px;
+}
+.score h2 {
+	margin-bottom: 10px;
+}
+
+.score .wrapper .item_level {
+	padding: 10px 30px;
+	margin: 0px 20px 40px;
+	border: solid 1px #663300;
+	border-radius: 5px;
+}
+.score .wrapper .item_level .score_text {
+	margin-bottom: 20px;
+	text-align: left;
+}
+
+.score .item_medal img {
+	width: 30%;
+	vertical-align: middle;
+}
+.score .item_medal .text {
+	margin-bottom: 10px;
 }
 
 
