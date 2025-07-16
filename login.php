@@ -16,29 +16,34 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<link rel="icon" href="<?php echo DIR_NAME;?>img/favicon.ico">
 		<link rel="apple-touch-icon" href="<?php echo DIR_NAME;?>img/apple-touch-icon.png">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="http://unpkg.com/ress/dist/ress.min.css">
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="<?php echo DIR_NAME;?>css/common.css">
+		<link rel="stylesheet" href="<?php echo DIR_NAME;?>css/login_user.css">
 	</head>
 	<body>
 		<!-- ヘッダー -->
 		<?php include ROOT . 'header.php'; ?>
 
-		<main>
-			<form action="login.php" method="post">
+		<main class="login">
+			<form class="item" action="login.php" method="post">
 				<dl>
-					<dt><label for="name">ニックネーム</label></dt>
-					<dd><input type="text" name="name" value="<?php echo (!empty($view['data']['name'])) ? $view['data']['name'] : ''; ?>"></dd>
+					<dt class="mb5"><label for="name">ニックネーム</label></dt>
+					<dd><input class="box mb20" type="text" name="name" value="<?php echo (!empty($view['data']['name'])) ? $view['data']['name'] : ''; ?>"></dd>
 
-					<dt><label for="password">パスワード</label></dt>
-					<dd><input type="password" name="password" value="<?php echo (!empty($view['data']['password'])) ? $view['data']['password'] : ''; ?>"></dd>
+					<dt class="mb5"><label for="password">パスワード</label></dt>
+					<dd><input class="box mb20" type="password" name="password" value="<?php echo (!empty($view['data']['password'])) ? $view['data']['password'] : ''; ?>"></dd>
 
 					<?php if(!empty($view['err'])):/*エラーがある場合*/?>
-					<div><?php echo $view['err'];?></div>
+					<div class="err_text"><?php echo $view['err'];?></div>
 					<?php endif;?>
 
 				</dl>
 				<input type="hidden" name="csrf_token" value="<?php echo (!empty($view['data']['csrf_token'])) ? $view['data']['csrf_token'] : ''; ?>">
-				<button type="submit" name="action" value="login">ログイン</button>
+
+				<div class="login_btn"><button type="submit" name="action" value="login">ログイン</button></div>
 			</form>
 
 		</main>

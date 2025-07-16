@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+.login,
+.user {
+	width: 50%;
+	padding: 20px;
+	margin: 0px auto;
+}
+
+.login .item .box,
+.user .item .box {
+	width: 100%;
+	border: solid 1px #663300;
+	padding: 8px 8px;
+}
+
+.login .err_text,
+.user .err_text {
+	color: red;
+	margin-bottom: 10px;
+}
+
+.login .login_btn,
+.user .user_btn {
+	text-align: center;
+}
+.login button,
+.user button {
+	color: #663300;
+	border: solid 1px #663300;
+	border-radius: 5px;
+	padding: 8px 40px;
+	margin: 0 auto;
+}
+.login button:hover,
+.user button:hover{
+	opacity: 0.7;
+}
+
+.user .btn_wrapper {
+	text-align: center;
+}
+.user .confirm_btn {
+	display: inline-block;
+	margin-left: 20px;
+}
+
+
+.user h1 {
+	text-align: center;
+	font-size: 28px;
+	margin-bottom: 20px;
+}
+
+.user .warn_text {
+	color:blue;
+	font-size: 13px;
+}
+
+main .btn {
+	padding: 8px 40px;
+}
+
+/*---------------------------------------
+スマートフォン
+----------------------------------------*/
+@media screen and (max-width: 767px) {
+
+
+}

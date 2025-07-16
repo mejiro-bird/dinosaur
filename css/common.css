@@ -37,6 +37,13 @@ a:hover {
 	text-decoration: underline;
 }
 
+.mb5 {
+	margin-bottom: 5px;
+}
+.mb20 {
+	margin-bottom: 20px;
+}
+
 main .btn {
 	border: solid 1px #663300;
 	border-radius: 5px;
