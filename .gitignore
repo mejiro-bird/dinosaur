@@ -1,3 +1,5 @@
 /config.php
+/config-dev.php
+/config-stg.php
 /err_log.txt
 Thumbs.db

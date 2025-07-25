@@ -1,5 +1,5 @@
 <?php
-	require_once $_SERVER['DOCUMENT_ROOT']. '/dinosaur/config.php';
+	require_once '../config.php';
 	require_once CONTROLLER_DIR . '/user_controller.php';
 
 	$ctrl = new UserController();
