@@ -1,5 +1,9 @@
 <header id="header">
-	<h1 class="logo"><a href="<?php echo DIR_NAME;?>index.php">恐竜検定</a></h1>
+	<h1 class="logo">
+		<a href="<?php echo DIR_NAME;?>index.php">
+			<img src="<?php echo DIR_NAME;?>img/logo.png">恐竜検定
+		</a>
+	</h1>
 
 	<nav class="navi">
 		<ul class="menu">

@@ -74,5 +74,14 @@ main .login .link {
 ----------------------------------------*/
 @media screen and (max-width: 767px) {
 
+	.quiz .item {
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: 0px;
+	}
+	.quiz .item li {
+		width: 100%;
+		margin-bottom: 20px;
+	}
 
 }

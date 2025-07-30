@@ -69,6 +69,14 @@
 	text-align: right;
 }
 
+.question .select {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
 .answer .text {
 	margin: 20px auto;
 }
@@ -128,7 +136,7 @@
 }
 
 .score .wrapper .item_level {
-	padding: 10px 30px;
+	padding: 10px 20px;
 	margin: 0px 20px 40px;
 	border: solid 1px #663300;
 	border-radius: 5px;
@@ -152,5 +160,66 @@
 ----------------------------------------*/
 @media screen and (max-width: 767px) {
 
+	.text_title {
+		margin-bottom: 20px;
+	}
+
+	.question .select {
+		flex-direction: column;
+	}
+
+	.item {
+		margin-bottom: 20px;
+	}
+
+
+	.select .btn {
+		width: 70%;
+	}
+
+	.item .correct img {
+		width: 70%;
+	}
+	.item .text_q,
+	.item .correct {
+		font-size: 15px;
+	}
+
+
+	.result .wrapper {
+		flex-direction: column;
+		height: auto;
+	}
+
+	.result .description {
+		width: 80%;
+		padding-left: 30px;
+	}
+
+	.result .text_score {
+		margin: 20px auto;
+		padding-right: 0px;
+	}
+
+	.result .img_medal {
+		padding-left: 0px;
+		margin-bottom: 10px;
+	}
+	.result .item_medal .text {
+		line-height: normal;
+	}
+
+	.result .item_medal {
+		flex-direction: column;
+		height: auto;
+	}
+
+	.result .text {
+		margin: 10px 0;
+	}
+
+	.score .wrapper {
+		flex-direction: column;
+	}
 
 }

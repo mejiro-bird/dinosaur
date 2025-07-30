@@ -66,5 +66,13 @@ main .btn {
 ----------------------------------------*/
 @media screen and (max-width: 767px) {
 
+	.login,
+	.user {
+		width: 100%;
+	}
+
+	.user h1 {
+		font-size: 23px;
+	}
 
 }
