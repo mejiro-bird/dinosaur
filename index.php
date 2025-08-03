@@ -57,7 +57,7 @@
 			</section>
 
 			<?php if(!empty($ctrl->view['login'])):/*ログイン中の場合*/?>
-			<div class="score"><a class="btn" href="quiz/score.php">記録をみる</a></div>
+			<div class="score mb5"><a class="btn" href="quiz/score.php">記録をみる</a></div>
 			<?php endif;?>
 
 			<div class="comment_link">ご意見・ご要望は<a class="uline" href="comment/input.php">こちら</a>まで</div>

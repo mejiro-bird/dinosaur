@@ -82,12 +82,12 @@ main .btn {
 	font-size: 14px;
 	display: inline-block;
 	text-align: right;
-	width: 75%;
+	width: 70%;
 }
 #header .navi .menu .logout {
 	font-size: 14px;
 	display: inline-block;
-	width: 20%;
+	width: 25%;
 	margin-left: 20px;
 }
 #header .navi .menu .btn {
@@ -134,10 +134,10 @@ main {
 	}
 
 	#header .navi .menu .name {
-		width: 52%;
+		width: 45%;
 	}
 	#header .navi .menu .logout {
-		width: 43%;
+		width: 50%;
 		margin-left: 10px;
 	}
 
