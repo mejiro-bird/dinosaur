@@ -129,7 +129,8 @@
 }
 
 .score h1 {
-	margin-bottom: 20px;
+	font-size: 25px;
+	margin: 10px 10px 20px;
 }
 .score h2 {
 	margin-bottom: 10px;

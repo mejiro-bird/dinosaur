@@ -69,6 +69,12 @@ main .login .link {
 	text-align: center;
 }
 
+.comment_link {
+	text-align: right;
+	font-size: 15px;
+	margin-right: 20px;
+}
+
 /*---------------------------------------
 スマートフォン
 ----------------------------------------*/

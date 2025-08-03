@@ -60,7 +60,7 @@ main .btn {
 	padding: 0 20px;
 }
 #header .logo {
-	width: 100%;
+	width: 32%;
 	max-width: 150px;
 	font-size: 28px;
 }
@@ -70,12 +70,24 @@ main .btn {
 #header .logo a {
 	display: block;
 }
+#header .navi {
+	width: 60%;
+}
 #header .navi .menu {
 	display: flex;
+	justify-content: flex-end;
 	align-items: center;
 }
-#header .navi .menu li {
+#header .navi .menu .name {
 	font-size: 14px;
+	display: inline-block;
+	text-align: right;
+	width: 75%;
+}
+#header .navi .menu .logout {
+	font-size: 14px;
+	display: inline-block;
+	width: 20%;
 	margin-left: 20px;
 }
 #header .navi .menu .btn {
@@ -84,6 +96,7 @@ main .btn {
 	display: inline-block;
 	padding: 3px 10px;
 }
+
 
 #footer {
 	position: sticky;
@@ -112,12 +125,22 @@ main {
 @media screen and (max-width: 767px) {
 
 	#header .logo {
-		max-width: 100px;
+		max-width: none;
 		font-size: 18px;
+		width: 32%;
 	}
 	#header .logo img {
 		width: 20%;
 	}
+
+	#header .navi .menu .name {
+		width: 52%;
+	}
+	#header .navi .menu .logout {
+		width: 43%;
+		margin-left: 10px;
+	}
+
 
 	.wrapper {
 		padding: 0 20px;

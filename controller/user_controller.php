@@ -64,7 +64,7 @@ class UserController extends CommonController{
 		$err = $this->err_check($post);
 		if (!empty($err)) {//入力エラーがある場合
 			//エラー内容をセッションに入れて、入力画面へリダイレクト
-			$_SESSION['err']['err_message'] = '入力内容を修正してください';
+			$err['err_message'] = '入力内容を修正してください';
 			$_SESSION['err'] = $err;
 			$this->send_redirect('input.php');
 			//リダイレクトして処理を終了
