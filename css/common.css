@@ -83,6 +83,7 @@ main .btn {
 	display: inline-block;
 	text-align: right;
 	width: 70%;
+	overflow-wrap: anywhere;
 }
 #header .navi .menu .logout {
 	font-size: 14px;

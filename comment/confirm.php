@@ -33,7 +33,7 @@
 
 			<form class="item" action="finish.php" method="post">
 				<div class="mb20">ニックネーム　<?php if(!empty($view['data']['name'])) echo $view['data']['name'];?></div>
-				<div class="mb20">コメント<br>
+				<div class="comment_text mb20">コメント<br>
 					<?php echo $view['data']['comment'];?>
 				</div>
 				<div class="btn_wrapper">

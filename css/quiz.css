@@ -130,6 +130,7 @@
 
 .score h1 {
 	font-size: 25px;
+	overflow-wrap: anywhere;
 	margin: 10px 10px 20px;
 }
 .score h2 {

@@ -67,6 +67,10 @@
 	font-size: 13px;
 }
 
+.comment .item .comment_text {
+	overflow-wrap: anywhere;
+}
+
 main .btn {
 	padding: 8px 40px;
 }
