@@ -32,7 +32,7 @@
 			<div class="text mb20">参考にさせて頂きます。</div>
 
 			<div class="btn_wrapper">
-				<a class="btn" href="<?php echo DIR_NAME;?>index.php">TOPへ</a>
+				<a class="btn" href="<?php echo DIR_NAME;?>index.php">TOPに戻る</a>
 			</div>
 
 		</main>
