@@ -18,7 +18,7 @@
 		<link rel="apple-touch-icon" href="<?php echo DIR_NAME;?>img/apple-touch-icon.png">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Stick&family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="http://unpkg.com/ress/dist/ress.min.css">
 		<link rel="stylesheet" href="<?php echo DIR_NAME;?>css/common.css">
 		<link rel="stylesheet" href="<?php echo DIR_NAME;?>css/quiz.css">
@@ -28,10 +28,10 @@
 		<?php include ROOT . 'header.php'; ?>
 
 		<main class="result">
-			<h1>結果発表</h1>
+			<h1 class="title">結果発表</h1>
 
 			<div class="wrapper">
-				<div class="text_score"><?php echo $view['quiz_info']['score'];?>点</div>
+				<div class="text_score title"><?php echo $view['quiz_info']['score'];?>点</div>
 
 				<div class="img_medal">
 					<?php if($view['quiz_info']['score'] >= 90):/* 90点以上の場合 */?>
@@ -50,7 +50,7 @@
 			</div>
 			
 			<?php if(!empty($view['login'])):/*ログイン中の場合*/?>
-			<h2><?php echo $view['login']['name'];?>の記録</h2>
+			<h2 class="title"><?php echo $view['login']['name'];?>の記録</h2>
 
 			<div class="item_medal">
 				<div class="text">

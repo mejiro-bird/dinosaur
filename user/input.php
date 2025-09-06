@@ -18,7 +18,7 @@
 		<link rel="apple-touch-icon" href="<?php echo DIR_NAME;?>img/apple-touch-icon.png">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Stick&family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="http://unpkg.com/ress/dist/ress.min.css">
 		<link rel="stylesheet" href="<?php echo DIR_NAME;?>css/common.css">
 		<link rel="stylesheet" href="<?php echo DIR_NAME;?>css/login_user.css">
@@ -29,9 +29,9 @@
 
 		<main class="user">
 			<?php if(!empty($ctrl->view['login'])):/*ログイン中の場合*/?>
-			<h1>ユーザー　編集</h1>
+			<h1 class="title">ユーザー　編集</h1>
 			<?php else:/*未ログインの場合*/?>
-			<h1>ユーザー　新規登録</h1>
+			<h1 class="title">ユーザー　新規登録</h1>
 			<?php endif;?>
 
 			<form class="item" action="confirm.php" method="post">
@@ -50,7 +50,7 @@
 					<dt class="mb5"><label for="password">パスワード</label></dt>
 					<dd><input class="box mb20" type="password" name="password" value="<?php echo (!empty($view['data']['password'])) ? $view['data']['password'] : ''; ?>"></dd>
 
-					<dt class="mb5"><label class="title" for="password2">パスワード(確認用)</label></dt>
+					<dt class="mb5"><label for="password2">パスワード(確認用)</label></dt>
 					<dd><input class="box mb20" type="password" name="password2" value="<?php echo (!empty($view['data']['password2'])) ? $view['data']['password2'] : ''; ?>"></dd>
 					<?php if(!empty($view['err']['password'])):/*エラーがある場合*/?>
 					<div class="err_text"><?php echo $view['err']['password'];?></div>
