@@ -17,7 +17,7 @@
 		<link rel="apple-touch-icon" href="<?php echo DIR_NAME;?>img/apple-touch-icon.png">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Stick&family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="http://unpkg.com/ress/dist/ress.min.css">
 		<link rel="stylesheet" href="<?php echo DIR_NAME;?>css/common.css">
 		<link rel="stylesheet" href="<?php echo DIR_NAME;?>css/quiz.css">
@@ -27,12 +27,12 @@
 		<?php include ROOT . 'header.php'; ?>
 
 		<main class="score">
-			<h1><?php echo $view['login']['name'];?>の記録</h1>
+			<h1 class="title"><?php echo $view['login']['name'];?>の記録</h1>
 
 			<div class="wrapper">
 				<?php foreach($ctrl::QUIZ_LEVEL_MST as $key => $row):?>
 				<div class="item_level">
-					<h2><?php echo $row['level_name'];?></h2>
+					<h2 class="title"><?php echo $row['level_name'];?></h2>
 					<div class="score_text">
 						<div>
 							最高記録　<?php echo $view['score'][$key]['max_score'];?>点
