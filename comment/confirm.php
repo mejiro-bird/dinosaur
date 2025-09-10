@@ -27,7 +27,7 @@
 		<?php include ROOT . 'header.php'; ?>
 
 		<main class="comment">
-			<h1>ご意見・ご要望　確認</h1>
+			<h1 class="title">ご意見・ご要望　確認</h1>
 
 			<div class="text mb20">下記の内容でよろしいですか。</div>
 
