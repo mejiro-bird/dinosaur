@@ -63,6 +63,7 @@ class QuizController extends CommonController{
 		//ビューへ
 		$this->view['quiz_data'] = $quiz_data[$quiz_info['question_num']-1]; //出題する問題のみビューに入れる
 		$this->view['quiz_info'] = $quiz_info;
+		$this->view['quiz_num'] = $this::QUIZ_LEVEL_MST[$quiz_info['level']]['num']; //問題数
 		$this->view['level_name'] = $this::QUIZ_LEVEL_MST[$quiz_info['level']]['level_name'];
 		//ワンタイムトークンを作成してビューへ
 		$this->view['data']['csrf_token'] = $this->make_onetimetoken();

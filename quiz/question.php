@@ -29,6 +29,15 @@
 
 		<main class="question">
 			<div class="wrapper">
+				<div class="status mb20">
+					<?php for($i=1;$i<=$view['quiz_num'];$i++):?>
+					<span class="circle <?php if($i==$view['quiz_info']['question_num']) echo 'selected';?>"><?php echo $i;?></span>
+					<?php if($i<$view['quiz_num']):/* 最終問題の前まで */?>
+					<span class="next_direction">▲</span>
+					<?php endif;?>
+					<?php endfor;?>
+				</div>
+
 				<h1 class="text_title"><?php echo $view['level_name'] .'　第'. $view['quiz_info']['question_num'] .'問';?></h1>
 
 				<div class="item">
